@@ -5,7 +5,7 @@
 //			использовать символ подчеркивания для обозначения позиции,
 //			где будет производиться ввод.
 
-/*
+
 #include <iostream>
 int main()
 {
@@ -23,7 +23,7 @@ int main()
 
 	return 0; 
 }
-*/
+
 
 //Task 2 -- Напишите программу, которая запрашивает рост в футах и дюймах
 //			и вес в фунтах. Программа должна выдать индекс массы тела
@@ -32,16 +32,15 @@ int main()
 //			Далее вес в фунтах в массу в кг., разделив на 2.2. После рассчитать
 //			BMI, разделив массу в кг на квадрат роста в метрах.
 
-/*
+
 #include <iostream>
 float heightConvert(short height_foot, short height_inch);
 float weightConvert(short weight_lb);
-void BMI(float meter_height, float kilo_weight);
+float bodyMassIndex(float meter_height, float kilo_weight);
 
 int main()
 {
 	using namespace std;
-	const short ftToIn = 12; // 1 foot - 12 inches
 	
 	cout << "Enter your height in foots: ";
 	short height_foot, height_inch, weight_lb;
@@ -51,53 +50,31 @@ int main()
 	cout << "Enter your weight in lb.: ";
 	cin >> weight_lb;
 	
-	float meter_height, kilo_weight;
-	meter_height = heightConvert(height_foot, height_inch);
-	kilo_weight = weightConvert(weight_lb);
-	BMI(meter_height, kilo_weight);
+	const float meter_height = heightConvert(height_foot, height_inch);
+	const float kilo_weight = weightConvert(weight_lb);
+	const float BMI = bodyMassIndex(meter_height, kilo_weight);
+	cout << "BMI: " << BMI << endl;
 
 	return 0;
-
-	// Вариант 1 - всё внутри main
-
-//	short in_height;
-//	in_height = height_foot / 12 + height_foot % 12 + height_inch;
-//	float meter_height;
-//	meter_height = in_height * 0.0254;
-
-//	float kilo_weight;
-//	kilo_weight = weight_lb / 2.2;
-
-//	float BMI;
-//	BMI = (meter_height * meter_height) / kilo_weight;
-//	cout << "BMI is " << BMI << endl;
-
-//	return 0;
 }
-
-	// Вариант 2 - модульность
 
 float heightConvert(short height_foot, short height_inch)
 {
-	short in_height;
-	in_height = height_foot / 12 + height_foot % 12 + height_inch;
-
-	return in_height * 0.0254;
+	const short foot_per_inch = 12;
+	const float inch_per_meter = 0.0254;
+	return (height_foot * foot_per_inch + height_inch) * inch_per_meter;
 }
+
 float weightConvert(short weight_lb)
 {
-	return weight_lb / 2.2;
+	const float mass_convert = 2.2;
+	return weight_lb / mass_convert;
 }
 
-void BMI(float meter_height, float kilo_weight)
+float bodyMassIndex(float meter_height, float kilo_weight)
 {
-	using namespace std;
-	float BMI;
-
-	BMI = (meter_height * meter_height) / kilo_weight;
-	cout << "BMI: " << BMI << endl;
+	return (meter_height * meter_height) / kilo_weight;
 }
-*/
 
 
 // Task 3 -- Напишите программу, которая запрашивает широту в градусах,
@@ -107,7 +84,6 @@ void BMI(float meter_height, float kilo_weight)
 //			 Для каждого вводимого значения должна использоваться
 //			 отдельная переменная.
 
-/*
 #include <iostream>
 
 int main()
@@ -134,7 +110,6 @@ int main()
 
 	return 0;
 }
-*/
 
 //Task 4 -- Напишите программу, которая запрашивает количество секунд
 //			в виде целого значения (long или long long) и затем
