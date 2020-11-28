@@ -25,7 +25,7 @@ int main()
 
 	if (country_population > world_population)
 	{
-		cerr << "Incorrect input data" << end;
+		cerr << "Incorrect input data" << endl;
 		return EXIT_FAILURE;
 	}
 	procent = ratio(world_population, country_population);
