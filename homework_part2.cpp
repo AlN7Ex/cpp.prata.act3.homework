@@ -24,9 +24,11 @@ int main()
 	cin >> country_population;
 
 	if (country_population > world_population)
+	{
+		cerr << "Incorrect input data" << end;
 		return EXIT_FAILURE;
-	else
-		procent = ratio(world_population, country_population);
+	}
+	procent = ratio(world_population, country_population);
 	cout << "The population of country is " << procent << " \% of the world population";
 
 	return 0;
