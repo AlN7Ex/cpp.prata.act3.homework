@@ -34,9 +34,9 @@ int main()
 
 
 #include <iostream>
-float heightConvert(short height_foot, short height_inch);
-float weightConvert(short weight_lb);
-float bodyMassIndex(float meter_height, float kilo_weight);
+float heightConvert(const short height_foot, const short height_inch);
+float weightConvert(const short weight_lb);
+float bodyMassIndex(const float meter_height, const float kilo_weight);
 
 int main()
 {
