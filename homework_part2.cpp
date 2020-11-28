@@ -14,7 +14,6 @@ float ratio(const long long world_population, const long long country_population
 int main()
 {
 	using namespace std;
-	float procent;
 
 	cout << "Enter world's population: ";
 	long long world_population;
@@ -28,7 +27,7 @@ int main()
 		cerr << "Incorrect input data" << endl;
 		return EXIT_FAILURE;
 	}
-	procent = ratio(world_population, country_population);
+	const float percent = ratio(world_population, country_population);
 	cout << "The population of country is " << procent << " \% of the world population";
 
 	return 0;
