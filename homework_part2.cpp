@@ -28,7 +28,7 @@ int main()
 		return EXIT_FAILURE;
 	}
 	const float percent = ratio(world_population, country_population);
-	cout << "The population of country is " << procent << " \% of the world population";
+	cout << "The population of country is " << percent << " \% of the world population";
 
 	return 0;
 }
